@@ -24,14 +24,15 @@ scaler = MinMaxScaler()
 X = scaler.fit_transform(df_algo)
 
 ### gestion des poids
-p_startYear = 1.5
-p_runtimeM = 0.4
-p_averageR = 0.5
-p_numVote = 0.5
+p_startYear = 1.4
 p_actor = 1.5
 p_director = 1.5
 p_genres = 1.4
 p_country = 1.3
+
+p_runtimeM = 0.5
+p_averageR = 0.5
+p_numVote = 0.5
 
 X[:,0] *= p_startYear
 X[:,1] *= p_runtimeM
@@ -73,7 +74,7 @@ if "bot" not in st.session_state:
 
 
 
-tab1, tab2 = st.tabs(["Acceuil","Historique"])
+tab1, tab2,tab3 = st.tabs(["Acceuil","Historique","Encore plus"])
 
 
 with tab1 :
@@ -207,3 +208,9 @@ with tab2 :
                 st.image("st_espace_vide2.png", use_column_width=True)
 
 
+with tab3 :
+    st.slider("Acteurs")
+    st.slider("Réalisateurs")
+    st.slider("Genres")
+    st.slider("Années")
+    st.slider("Pays")
