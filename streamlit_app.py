@@ -90,8 +90,9 @@ with tab1 :
             if film == " ":
                 st.session_state.bot.append("...")
                 st.session_state.user.append("...")
-                st.session_state.bot.append("Tu peux taper un titre approchant en anglais ou français, je compléterai automatiquement 😉 ")
                 st.session_state.bot.append("Oups 🫢, il me semble que tu n'as pas choisi de film")
+                st.session_state.bot.append("Tu peux taper un titre approchant en anglais ou français, je compléterai automatiquement 😉 ")
+                
             else :
                 tconst_film = df_titres[(df_titres.Title == film)].index.item()
                 distance, indices = algo.kneighbors(X[df_film.index == tconst_film])
