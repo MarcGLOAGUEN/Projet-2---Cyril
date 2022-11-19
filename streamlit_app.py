@@ -200,10 +200,11 @@ with tab1 :
 
 with tab2 :
     st.image("st_footer.png")
-    st.image("st_espace_vide2.png", use_column_width=True)
+    
 
     col_hist1, col_hist2 = st.columns([1,10])
     with col_hist2 :
+        st.image("st_espace_vide2.png", use_column_width=True)
         if st.session_state["poster"]:
             for i in range(len(st.session_state["poster"]) - 7,-1, -7):
                 st.image(st.session_state["poster"][i:i+7], caption = st.session_state["title"][i:i+7], width=150)
