@@ -3,8 +3,6 @@ import pandas as pd
 import random
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.neighbors import NearestNeighbors
-import streamlit as st
 from streamlit_chat import message
 import time
 
@@ -17,10 +15,9 @@ st.set_page_config(
 
 
 ## importation des tables pour l'algo
-df_film = pd.read_pickle("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/df_films.p")
-df_titres = pd.read_pickle("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/df_titres.p")
-df_algo = pd.read_pickle("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/df_algo.p")
-df_algo.drop(df_algo.loc[:,"10":'zombie'],axis=1,inplace=True)
+df_film = pd.read_pickle("df_films.p")
+df_titres = pd.read_pickle("df_titres.p")
+df_algo = pd.read_pickle("df_algo.p")
 
 ### scaled des données
 scaler = MinMaxScaler()
@@ -81,7 +78,7 @@ tab1, tab2 = st.tabs(["Acceuil","Historique"])
 
 with tab1 :
     ### HEADER
-    st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_header.png", use_column_width = True)
+    st.image("st_header.png", use_column_width = True)
 
 
 
@@ -102,7 +99,7 @@ with tab1 :
                 st.session_state.bot.append(film_choose)
                 st.session_state.user.append(film_choose)
                 st.session_state.poster.append(df_film.loc[tconst_film, :].Poster)
-                st.session_state.poster.append("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_espace_vide.png")
+                st.session_state.poster.append("st_espace_vide.png")
                 st.session_state.title.append(df_film.loc[tconst_film, :].originalTitle)
                 st.session_state.title.append("")
 
@@ -151,18 +148,18 @@ with tab1 :
 
 
     def print_film(numero) :
-        st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_espace_vide.png")
-        st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_espace_vide.png")
-        st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_espace_vide.png")
+        st.image("st_espace_vide.png")
+        st.image("st_espace_vide.png")
+        st.image("st_espace_vide.png")
         st.image(df_film.iloc[list(indices[0])[numero], :].Poster)
-        st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_espace_vide2.png")
+        st.image("st_espace_vide2.png")
         url = "https://www.imdb.com/title/"+df_film.iloc[[list(indices[0])[numero]], :].index.item()
         st.write(f"[{df_film.iloc[list(indices[0])[numero], :].originalTitle}](%s)" % url)
         st.write(str(int(df_film.iloc[list(indices[0])[numero], :].startYear)))
         st.write("⭐",str(df_film.iloc[list(indices[0])[numero], :].averageRating))
 
     with col_ligne1 :
-        st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_ligne_vertical.png")
+        st.image("st_ligne_vertical.png")
     with col_poster1 :
         if poster :
             with st.spinner('Wait for it...'):
@@ -193,16 +190,16 @@ with tab1 :
             st.session_state.title.append(df_film.iloc[list(indices[0])[5], :].originalTitle)
 
     with col_ligne2 :
-        st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_ligne_vertical.png")
+        st.image("st_ligne_vertical.png")
 
 
 
-    st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_espace_vide.png")
+    st.image("st_espace_vide.png")
 
 
 
 with tab2 :
-    st.image("/Users/marc/Mon Drive/02_Wild Code/03_Projets/02_Projet 2/01_Streamlit/st_footer.png")
+    st.image("st_footer.png")
 
 
     col_hist1, col_hist2 = st.columns([1,10])
