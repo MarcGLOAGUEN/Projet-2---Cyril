@@ -133,11 +133,11 @@ with tab1 :
                 poster = True
 
         if st.session_state["bot"] :
-            for texte in st.session_state["bot"][-6:]:
-                if texte in st.session_state["user"] :
-                    message(texte, key=str(i), is_user=True)
+            for i in st.session_state["bot"][-6:]:
+                if i in st.session_state["user"] :
+                    message(i, is_user=True)
                 else :
-                    message(texte, key=str(i))
+                    message(i)
                
 
 
