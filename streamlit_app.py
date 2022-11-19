@@ -64,8 +64,8 @@ poster = False
 
 
 if "bot" not in st.session_state:
-    st.session_state["bot"] = ["Si tu n’as pas d’idée de film à regarder, donne-moi un film que tu as aimé récemment. Je te proposerai 5 films similaires que tu pourrais aimer 😉",
-                               "Salut, moi c'est Cyril, malgrès mon jeune âge j'ai déjà vu 8274 films 😅."
+    st.session_state["bot"] = ["Salut, moi c'est Cyril, malgrès mon jeune âge j'ai déjà vu 8274 films 😅.",
+                               "Si tu n’as pas d’idée de film à regarder, donne-moi un film que tu as aimé récemment. Je te proposerai 5 films similaires que tu pourrais aimer 😉"
                                ]
     st.session_state["user"] = []
     st.session_state["poster"] = []
