@@ -209,8 +209,8 @@ with tab2 :
 
 
 with tab3 :
-    st.slider("Acteurs", value=0.2, step = 0.05)
-    st.slider("Réalisateurs", value=0.2, step = 0.05)
-    st.slider("Genres", value=0.2, step = 0.05)
-    st.slider("Années", value=0.2, step = 0.05)
-    st.slider("Pays", value=0.2, step = 0.05)
+    st.slider("Acteurs", value=0.2, step = 0.05, format = ".2%")
+    st.slider("Réalisateurs", value=0.2, step = 0.05, format = ".2%")
+    st.slider("Genres", value=0.2, step = 0.05, format = ".2%")
+    st.slider("Années", value=0.2, step = 0.05, format = ".2%")
+    st.slider("Pays", value=0.2, step = 0.05, format = ".2%")
