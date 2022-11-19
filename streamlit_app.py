@@ -74,7 +74,7 @@ if "bot" not in st.session_state:
 
 
 
-tab1, tab2,tab3 = st.tabs(["Acceuil","Historique","Encore plus"])
+tab1, tab2 = st.tabs(["Acceuil","Historique"])
 
 
 with tab1 :
@@ -207,10 +207,3 @@ with tab2 :
                 st.image(st.session_state["poster"][i:i+7], caption = st.session_state["title"][i:i+7], width=150)
                 st.image("st_espace_vide2.png", use_column_width=True)
 
-
-with tab3 :
-    st.slider("Acteurs", max_value=100, value=20, step = 5)
-    st.slider("Réalisateurs", max_value=100, value=20, step = 5)
-    st.slider("Genres", max_value=100, value=20, step = 5)
-    st.slider("Années", max_value=100, value=20, step = 5)
-    st.slider("Pays", max_value=100, value=20, step = 5)
