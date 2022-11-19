@@ -132,18 +132,13 @@ with tab1 :
                         st.session_state.bot.append(list_answer[random.randrange(len(list_answer))])
                 poster = True
 
-        if st.session_state["bot"]:
-            counter = 0
-            for i in range(len(st.session_state["bot"])):
+        if st.session_state["bot"] :
+            for i in range(len(st.session_state["bot"][-7:])):
                 if st.session_state["bot"][i] in st.session_state["user"] :
                     message(st.session_state["bot"][i], key=str(i), is_user=True)
                 else :
                     message(st.session_state["bot"][i], key=str(i))
-                counter += 1
-                if counter >5 :
-                    break
-                else :
-                    continue
+               
 
 
 
