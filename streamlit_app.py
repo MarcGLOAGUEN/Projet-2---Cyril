@@ -134,7 +134,7 @@ with tab1 :
 
         if st.session_state["bot"]:
             counter = 0
-            for i in range(len(st.session_state["bot"]) - 1,-1, -1):
+            for i in range(len(st.session_state["bot"])):
                 if st.session_state["bot"][i] in st.session_state["user"] :
                     message(st.session_state["bot"][i], key=str(i), is_user=True)
                 else :
