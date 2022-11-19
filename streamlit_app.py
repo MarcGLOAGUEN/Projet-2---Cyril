@@ -158,8 +158,8 @@ with tab1 :
         st.write(str(int(df_film.iloc[list(indices[0])[numero], :].startYear)))
         st.write("⭐",str(df_film.iloc[list(indices[0])[numero], :].averageRating))
 
-    with col_ligne1 :
-        st.image("st_ligne_vertical.png")
+    #with col_ligne1 :
+        #st.image("st_ligne_vertical.png")
     with col_poster1 :
         if poster :
             with st.spinner('Wait for it...'):
@@ -189,8 +189,8 @@ with tab1 :
             st.session_state.poster.append(df_film.iloc[list(indices[0])[5], :].Poster)
             st.session_state.title.append(df_film.iloc[list(indices[0])[5], :].originalTitle)
 
-    with col_ligne2 :
-        st.image("st_ligne_vertical.png")
+    #with col_ligne2 :
+        #st.image("st_ligne_vertical.png")
 
 
 
