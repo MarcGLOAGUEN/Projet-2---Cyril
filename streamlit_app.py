@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import random
-from sklearn.neighbors import NearestNeighbors
-from sklearn.preprocessing import MinMaxScaler
+#from sklearn.neighbors import NearestNeighbors
+#from sklearn.preprocessing import MinMaxScaler
 from streamlit_chat import message
 import time
 
