@@ -96,6 +96,7 @@ with tab1 :
                 st.session_state.bot.append("Tu peux taper un titre approchant en anglais ou français, je compléterai automatiquement 😉 ")
                 
             else :
+                poster = True
                 tconst_film = df_titres[(df_titres.Title == film)].index.item()
                 distance, indices = algo.kneighbors(X[df_film.index == tconst_film])
                 film_choose = film[:-7] + " de " + film[-5:-1]
