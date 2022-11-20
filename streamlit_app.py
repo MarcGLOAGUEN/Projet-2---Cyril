@@ -86,13 +86,7 @@ with tab1 :
     col_chat,col_ligne1, col_poster1, col_poster2,col_poster3,col_poster4,col_poster5,col_ligne2 = st.columns([30,5,10,10,10,10,10,5])
    
     with col_chat :
-        if st.session_state["bot"] :
-            for i in st.session_state["bot"][-5:]:
-                if i in st.session_state["user"] :
-                    message(i, is_user=True)
-                else :
-                    message(i)
-        film = st.selectbox(" ",options = ([" "]+list(df_titres.Title)))
+
         if st.button("Envoyer"):
             if film == " ":
                 st.session_state.bot.append("...")
@@ -139,6 +133,13 @@ with tab1 :
 
                         st.session_state.bot.append(list_answer[random.randrange(len(list_answer))])
                 poster = True
+       if st.session_state["bot"] :
+            for i in st.session_state["bot"][-5:]:
+                if i in st.session_state["user"] :
+                    message(i, is_user=True)
+                else :
+                    message(i)
+        film = st.selectbox(" ",options = ([" "]+list(df_titres.Title)))
 
 
                
