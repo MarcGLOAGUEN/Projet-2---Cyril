@@ -193,6 +193,7 @@ with tab1 :
 
 with tab2 :
     st.image("st_footer.png")
+    message("Ici tu pourras consulter l'historique de tes recommandations. La première affiche corresponds au film que tu m'as donné et les 5 autres correspondent aux recommandations")
     
 
     col_hist1, col_hist2 = st.columns([1,10])
