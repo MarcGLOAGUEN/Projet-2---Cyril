@@ -86,8 +86,9 @@ with tab1 :
     col_chat,col_ligne1, col_poster1, col_poster2,col_poster3,col_poster4,col_poster5,col_ligne2 = st.columns([30,5,10,10,10,10,10,5])
    
     with col_chat :
+        film = st.selectbox(" ",options = ([" "]+list(df_titres.Title)))
 
-        if poster :
+        if st.button("Envoyer") :
             if film == " ":
                 st.session_state.bot.append("...")
                 st.session_state.user.append("...")
@@ -139,9 +140,8 @@ with tab1 :
                     message(i, is_user=True)
                 else :
                     message(i)
-        film = st.selectbox(" ",options = ([" "]+list(df_titres.Title)))
-        if st.button("Envoyer") :
-            poster = True
+        
+
 
                
 
@@ -187,7 +187,7 @@ with tab1 :
             print_film(5)
             st.session_state.poster.append(df_film.iloc[list(indices[0])[5], :].Poster)
             st.session_state.title.append(df_film.iloc[list(indices[0])[5], :].originalTitle)
-            poster = False
+
 
 
 with tab2 :
