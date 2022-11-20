@@ -133,7 +133,7 @@ with tab1 :
 
                         st.session_state.bot.append(list_answer[random.randrange(len(list_answer))])
                 poster = True
-       if st.session_state["bot"] :
+        if st.session_state["bot"] :
             for i in st.session_state["bot"][-5:]:
                 if i in st.session_state["user"] :
                     message(i, is_user=True)
