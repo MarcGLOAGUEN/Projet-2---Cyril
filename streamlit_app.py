@@ -65,7 +65,7 @@ if "bot" not in st.session_state:
 
 
 
-tab1, tab2= st.tabs(["Acceuil","Historique"])
+tab1, tab2= st.tabs(["Accueil","Historique"])
 
 
 with tab1 :
