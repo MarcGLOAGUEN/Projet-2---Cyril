@@ -70,7 +70,7 @@ tab1, tab2= st.tabs(["Acceuil","Historique"])
 
 with tab1 :
     ### HEADER
-    st.image("st_header.png", use_column_width = True)
+    #st.image("st_header.png", use_column_width = True)
 
     col_chat,col_ligne1, col_poster1, col_poster2,col_poster3,col_poster4,col_poster5,col_ligne2 = st.columns([30,5,10,10,10,10,10,5])
    
@@ -192,7 +192,7 @@ with tab1 :
 
 ### Historique
 with tab2 :
-    st.image("st_historique.png")
+    #st.image("st_historique.png")
     
     col_hist1, col_hist2 = st.columns([1,10])
     with col_hist2 :
