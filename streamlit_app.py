@@ -15,9 +15,9 @@ st.set_page_config(
 
 
 ## importation des tables pour l'algo
-df_film = pd.read_pickle("/Users/marc/Mon Drive/03_Projets/02_Projet 2/df_films.p")
-df_titres = pd.read_pickle("/Users/marc/Mon Drive/03_Projets/02_Projet 2/df_titres.p")
-df_algo = pd.read_pickle("/Users/marc/Mon Drive/03_Projets/02_Projet 2/df_algo.p")
+df_film = pd.read_pickle("df_films.p")
+df_titres = pd.read_pickle("df_titres.p")
+df_algo = pd.read_pickle("df_algo.p")
 
 ### scaled des données
 scaler = StandardScaler()
@@ -70,7 +70,7 @@ tab1, tab2= st.tabs(["Acceuil","Historique"])
 
 with tab1 :
     ### HEADER
-    st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_header.png", use_column_width = True)
+    st.image("st_header.png", use_column_width = True)
 
     col_chat,col_ligne1, col_poster1, col_poster2,col_poster3,col_poster4,col_poster5,col_ligne2 = st.columns([30,5,10,10,10,10,10,5])
    
@@ -93,7 +93,7 @@ with tab1 :
                 st.session_state.bot.append(film_choose)
                 st.session_state.user.append(film_choose)
                 st.session_state.poster.append(df_film.loc[tconst_film, :].Poster)
-                st.session_state.poster.append("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_espace_vide.png")
+                st.session_state.poster.append("st_espace_vide.png")
                 st.session_state.title.append(df_film.loc[tconst_film, :].originalTitle)
                 st.session_state.title.append("")
 
@@ -149,11 +149,11 @@ with tab1 :
 
 ### fonction pour afficher poster, titre(avec liens), année et note
     def print_film(numero) :
-        st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_espace_vide.png")
-        st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_espace_vide.png")
-        st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_espace_vide.png")
+        st.image("st_espace_vide.png")
+        st.image("st_espace_vide.png")
+        st.image("st_espace_vide.png")
         st.image(df_film.iloc[list(indices[0])[numero], :].Poster)
-        st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_barh.png")
+        st.image("st_barh.png")
         url = "https://www.imdb.com/title/"+df_film.iloc[[list(indices[0])[numero]], :].index.item()
         st.write(f"[{df_film.iloc[list(indices[0])[numero], :].originalTitle}](%s)" % url)
         st.write(str(int(df_film.iloc[list(indices[0])[numero], :].startYear)))
@@ -192,14 +192,14 @@ with tab1 :
 
 ### Historique
 with tab2 :
-    st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_historique.png")
+    st.image("st_historique.png")
     
     col_hist1, col_hist2 = st.columns([1,10])
     with col_hist2 :
         
         if st.session_state["poster"]:
             for i in range(len(st.session_state["poster"]) - 7,-1, -7):
-                st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_barh.png", use_column_width=True)
+                st.image("st_barh.png", use_column_width=True)
                 st.image(st.session_state["poster"][i:i+7], caption = st.session_state["title"][i:i+7], width=150)
-            st.image("/Users/marc/Mon Drive/03_Projets/02_Projet 2/_Streamlit/st_barh.png", use_column_width=True)
+            st.image("st_barh.png", use_column_width=True)
 
